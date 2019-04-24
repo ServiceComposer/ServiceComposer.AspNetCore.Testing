@@ -3,15 +3,15 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace ServiceComposer.AspNetCore.Testing
 {
-    public class TestWebApplicationFactory<TEntryPoint> :
-        WebApplicationFactory<TEntryPoint>
-        where TEntryPoint : class
+    public class WebApplicationFactoryWithWebHost<TStartup> :
+        WebApplicationFactory<TStartup>
+        where TStartup : class
     {
         protected override IWebHostBuilder CreateWebHostBuilder()
         {
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseStartup<TEntryPoint>();
+                .UseStartup<TStartup>();
 
             return host;
         }
