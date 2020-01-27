@@ -8,7 +8,7 @@
     <Authors>Mauro Servienti</Authors>
     <Description>Services ViewModel Composition Testing Infrastrucutre</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageIconUrl>https://raw.githubusercontent.com/ServiceComposer/ServiceComposer.AspNetCore.Testing/assets/ServiceComposer.png</PackageIconUrl>
+    <PackageIcon>ServiceComposer.png</PackageIcon>
     <PackageTags>Services ViewModel Composition Test</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -16,6 +16,10 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <NoWarn>$(NoWarn);NU5105</NoWarn>
   </PropertyGroup>
+   
+  <ItemGroup>
+    <None Include="..\..\assets\ServiceComposer.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
