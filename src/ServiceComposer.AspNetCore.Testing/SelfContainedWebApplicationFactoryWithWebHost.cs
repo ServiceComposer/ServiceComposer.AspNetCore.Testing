@@ -11,15 +11,17 @@ namespace ServiceComposer.AspNetCore.Testing
     /// </summary>
     /// <typeparam name="TEntryPoint">
     /// A type in the entry point assembly of the application. Typically the Startup
-    /// or Program classes can be used. Really whatever type in the entry assembly, 
+    /// or Program classes can be used. Really whatever type in the entry assembly,
     /// even the test fixture class works just fine.
     /// </typeparam>
     public class SelfContainedWebApplicationFactoryWithWebHost<TEntryPoint> :
-        WebApplicationFactory<TEntryPoint> 
+        WebApplicationFactory<TEntryPoint>
         where TEntryPoint : class
     {
         readonly Action<IServiceCollection> _configureServices;
         readonly Action<IApplicationBuilder> _configure;
+
+        public Action<IWebHostBuilder> BuilderCustomization { get; set; }
 
         public SelfContainedWebApplicationFactoryWithWebHost(Action<IServiceCollection> configureServices, Action<IApplicationBuilder> configure)
         {
@@ -35,6 +37,13 @@ namespace ServiceComposer.AspNetCore.Testing
                 .Configure(_configure);
 
             return host;
+        }
+
+        protected override void ConfigureWebHost(IWebHostBuilder builder)
+        {
+            base.ConfigureWebHost(builder);
+
+            BuilderCustomization?.Invoke(builder);
         }
     }
 }
