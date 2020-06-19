@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace ServiceComposer.AspNetCore.Testing
@@ -7,6 +8,8 @@ namespace ServiceComposer.AspNetCore.Testing
         WebApplicationFactory<TStartup>
         where TStartup : class
     {
+        public Action<IWebHostBuilder> BuilderCustomization { get; set; }
+
         protected override IWebHostBuilder CreateWebHostBuilder()
         {
             var host = new WebHostBuilder()
@@ -14,6 +17,13 @@ namespace ServiceComposer.AspNetCore.Testing
                 .UseStartup<TStartup>();
 
             return host;
+        }
+
+        protected override void ConfigureWebHost(IWebHostBuilder builder)
+        {
+            base.ConfigureWebHost(builder);
+
+            BuilderCustomization?.Invoke(builder);
         }
     }
 }
