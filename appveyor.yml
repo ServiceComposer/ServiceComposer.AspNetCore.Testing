@@ -18,6 +18,8 @@ test: off
 
 artifacts:
 - path: ./**/*.nupkg
+  type: NuGetPackage
 - path: ./**/*.snupkg
+  type: NuGetPackage
 
 deploy: off
