@@ -10,6 +10,10 @@ branches:
   - master
   - /release-.*/
   - /^\d+\.\d+\.\d+(-\S*)?$/
+  
+skip_commits:
+  files:
+    - '**/*.source.md'
 
 build_script:
 - cmd: ./build.cmd
