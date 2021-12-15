@@ -24,6 +24,11 @@
         <None Include="..\..\assets\ServiceComposer.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
+     <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.0"/>
+    </ItemGroup>
+     
      <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
         <FrameworkReference Include="Microsoft.AspNetCore.App"/>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.11"/>
