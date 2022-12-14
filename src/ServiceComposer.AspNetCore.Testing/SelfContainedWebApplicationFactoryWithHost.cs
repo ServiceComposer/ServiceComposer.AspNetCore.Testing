@@ -1,6 +1,4 @@
-﻿#if NET5_0 || NETCOREAPP
-
-using System;
+﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -50,4 +48,3 @@ namespace ServiceComposer.AspNetCore.Testing
         }
     }
 }
-#endif
