@@ -32,8 +32,6 @@ jobs:
         uses: actions/setup-dotnet@v5.0.0
         with:
           dotnet-version: |
-            6.0.x
-            7.0.x
             8.0.x
             9.0.x
             10.0.x
@@ -67,5 +65,6 @@ jobs:
         run: dotnet nuget push ./nugets/*.nupkg --source https://f.feedz.io/servicecomposer/pre-releases/nuget --api-key ${{ secrets.FEEDZ_API_KEY }}
       - name: Push symbols to Feedz.io
         run: dotnet nuget push ./nugets/*.snupkg --source https://f.feedz.io/servicecomposer/pre-releases/symbols --api-key ${{ secrets.FEEDZ_API_KEY }}
+
 
 
