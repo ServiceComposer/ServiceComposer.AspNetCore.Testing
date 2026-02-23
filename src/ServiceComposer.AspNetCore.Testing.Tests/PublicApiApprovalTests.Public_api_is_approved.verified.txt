@@ -1,0 +1,30 @@
+﻿[assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/ServiceComposer/ServiceComposer.AspNetCore.Testing")]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v10.0", FrameworkDisplayName=".NET 10.0")]
+namespace ServiceComposer.AspNetCore.Testing
+{
+    public class SelfContainedWebApplicationFactoryWithHost<TEntryPoint> : Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>
+        where TEntryPoint :  class
+    {
+        public SelfContainedWebApplicationFactoryWithHost(System.Action<Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Builder.IApplicationBuilder> configure, string[] args = null) { }
+        public System.Action<Microsoft.Extensions.Hosting.IHostBuilder> HostBuilderCustomization { get; set; }
+        public System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> WebHostBuilderCustomization { get; set; }
+        protected override Microsoft.Extensions.Hosting.IHostBuilder CreateHostBuilder() { }
+    }
+    public class SelfContainedWebApplicationFactoryWithWebHost<TEntryPoint> : Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>
+        where TEntryPoint :  class
+    {
+        public SelfContainedWebApplicationFactoryWithWebHost(System.Action<Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Builder.IApplicationBuilder> configure) { }
+        public SelfContainedWebApplicationFactoryWithWebHost(System.Action<Microsoft.AspNetCore.Hosting.WebHostBuilderContext, Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Hosting.WebHostBuilderContext, Microsoft.AspNetCore.Builder.IApplicationBuilder> configure) { }
+        public System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization { get; set; }
+        protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder) { }
+        protected override Microsoft.AspNetCore.Hosting.IWebHostBuilder CreateWebHostBuilder() { }
+    }
+    public class WebApplicationFactoryWithWebHost<TStartup> : Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TStartup>
+        where TStartup :  class
+    {
+        public WebApplicationFactoryWithWebHost() { }
+        public System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization { get; set; }
+        protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder) { }
+        protected override Microsoft.AspNetCore.Hosting.IWebHostBuilder CreateWebHostBuilder() { }
+    }
+}
