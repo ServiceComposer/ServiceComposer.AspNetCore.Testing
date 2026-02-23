@@ -1,0 +1,11 @@
+type ServiceComposer.AspNetCore.Testing.SelfContainedWebApplicationFactoryWithHost<TEntryPoint>
+  ctor SelfContainedWebApplicationFactoryWithHost`1(System.Action<Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Builder.IApplicationBuilder> configure, System.String[] args)
+  property System.Action<Microsoft.Extensions.Hosting.IHostBuilder> HostBuilderCustomization
+  property System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> WebHostBuilderCustomization
+type ServiceComposer.AspNetCore.Testing.SelfContainedWebApplicationFactoryWithWebHost<TEntryPoint>
+  ctor SelfContainedWebApplicationFactoryWithWebHost`1(System.Action<Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Builder.IApplicationBuilder> configure)
+  ctor SelfContainedWebApplicationFactoryWithWebHost`1(System.Action<Microsoft.AspNetCore.Hosting.WebHostBuilderContext, Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Hosting.WebHostBuilderContext, Microsoft.AspNetCore.Builder.IApplicationBuilder> configure)
+  property System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization
+type ServiceComposer.AspNetCore.Testing.WebApplicationFactoryWithWebHost<TStartup>
+  ctor WebApplicationFactoryWithWebHost`1()
+  property System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization

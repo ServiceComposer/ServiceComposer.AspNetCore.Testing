@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d559b5e4-ee4d-4596-adce-0d406a8a1e93" name="@runnervmwffz4 2026-02-23 11:04:25" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-02-23T11:04:25.1643718+00:00" queuing="2026-02-23T11:04:25.1643719+00:00" start="2026-02-23T11:04:23.2776330+00:00" finish="2026-02-23T11:04:25.1724394+00:00" />
+  <TestSettings name="default" id="a6208eee-88f7-42b9-acb9-2e66be6931d9">
+    <Deployment runDeploymentRoot="_runnervmwffz4_2026-02-23_11_04_25" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7976c956-3d6a-474a-92fe-153a3206f5ee" testId="f757f430-5e1c-3f56-2619-a17c168b8aec" testName="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests.SelfContainedFactoryWithHost_serves_request" computerName="runnervmwffz4" duration="00:00:00.3595646" startTime="2026-02-23T11:04:24.5624865+00:00" endTime="2026-02-23T11:04:24.9437897+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7976c956-3d6a-474a-92fe-153a3206f5ee" />
+    <UnitTestResult executionId="a31aad96-b2f6-4ef5-929d-e36ff6279b9f" testId="43215bb2-2b2e-904d-1666-dd5c2d3c8b7e" testName="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests.WebApplicationFactoryWithWebHost_invokes_builder_customization" computerName="runnervmwffz4" duration="00:00:00.0258843" startTime="2026-02-23T11:04:24.9476565+00:00" endTime="2026-02-23T11:04:24.9706784+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a31aad96-b2f6-4ef5-929d-e36ff6279b9f" />
+    <UnitTestResult executionId="36997127-4e7c-4455-9491-a7ebaec2b031" testId="f27cc2c3-c12b-77e3-c1b2-dab7457b6351" testName="ServiceComposer.AspNetCore.Testing.Tests.PublicApiApprovalTests.Public_api_is_approved" computerName="runnervmwffz4" duration="00:00:00.0307478" startTime="2026-02-23T11:04:24.5603981+00:00" endTime="2026-02-23T11:04:24.6052453+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36997127-4e7c-4455-9491-a7ebaec2b031" />
+    <UnitTestResult executionId="8fb7735b-3dc7-4815-9779-7303d477ac0d" testId="aee1601e-cfd3-d948-30f0-a6f15f8e972d" testName="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests.SelfContainedFactoryWithWebHost_invokes_builder_customization" computerName="runnervmwffz4" duration="00:00:00.0145461" startTime="2026-02-23T11:04:24.9711694+00:00" endTime="2026-02-23T11:04:24.9863772+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8fb7735b-3dc7-4815-9779-7303d477ac0d" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests.SelfContainedFactoryWithHost_serves_request" storage="/home/runner/work/servicecomposer.aspnetcore.testing/servicecomposer.aspnetcore.testing/src/servicecomposer.aspnetcore.testing.tests/bin/release/net10.0/servicecomposer.aspnetcore.testing.tests.dll" id="f757f430-5e1c-3f56-2619-a17c168b8aec">
+      <Execution id="7976c956-3d6a-474a-92fe-153a3206f5ee" />
+      <TestMethod codeBase="/home/runner/work/ServiceComposer.AspNetCore.Testing/ServiceComposer.AspNetCore.Testing/src/ServiceComposer.AspNetCore.Testing.Tests/bin/Release/net10.0/ServiceComposer.AspNetCore.Testing.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests" name="SelfContainedFactoryWithHost_serves_request" />
+    </UnitTest>
+    <UnitTest name="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests.WebApplicationFactoryWithWebHost_invokes_builder_customization" storage="/home/runner/work/servicecomposer.aspnetcore.testing/servicecomposer.aspnetcore.testing/src/servicecomposer.aspnetcore.testing.tests/bin/release/net10.0/servicecomposer.aspnetcore.testing.tests.dll" id="43215bb2-2b2e-904d-1666-dd5c2d3c8b7e">
+      <Execution id="a31aad96-b2f6-4ef5-929d-e36ff6279b9f" />
+      <TestMethod codeBase="/home/runner/work/ServiceComposer.AspNetCore.Testing/ServiceComposer.AspNetCore.Testing/src/ServiceComposer.AspNetCore.Testing.Tests/bin/Release/net10.0/ServiceComposer.AspNetCore.Testing.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests" name="WebApplicationFactoryWithWebHost_invokes_builder_customization" />
+    </UnitTest>
+    <UnitTest name="ServiceComposer.AspNetCore.Testing.Tests.PublicApiApprovalTests.Public_api_is_approved" storage="/home/runner/work/servicecomposer.aspnetcore.testing/servicecomposer.aspnetcore.testing/src/servicecomposer.aspnetcore.testing.tests/bin/release/net10.0/servicecomposer.aspnetcore.testing.tests.dll" id="f27cc2c3-c12b-77e3-c1b2-dab7457b6351">
+      <Execution id="36997127-4e7c-4455-9491-a7ebaec2b031" />
+      <TestMethod codeBase="/home/runner/work/ServiceComposer.AspNetCore.Testing/ServiceComposer.AspNetCore.Testing/src/ServiceComposer.AspNetCore.Testing.Tests/bin/Release/net10.0/ServiceComposer.AspNetCore.Testing.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ServiceComposer.AspNetCore.Testing.Tests.PublicApiApprovalTests" name="Public_api_is_approved" />
+    </UnitTest>
+    <UnitTest name="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests.SelfContainedFactoryWithWebHost_invokes_builder_customization" storage="/home/runner/work/servicecomposer.aspnetcore.testing/servicecomposer.aspnetcore.testing/src/servicecomposer.aspnetcore.testing.tests/bin/release/net10.0/servicecomposer.aspnetcore.testing.tests.dll" id="aee1601e-cfd3-d948-30f0-a6f15f8e972d">
+      <Execution id="8fb7735b-3dc7-4815-9779-7303d477ac0d" />
+      <TestMethod codeBase="/home/runner/work/ServiceComposer.AspNetCore.Testing/ServiceComposer.AspNetCore.Testing/src/ServiceComposer.AspNetCore.Testing.Tests/bin/Release/net10.0/ServiceComposer.AspNetCore.Testing.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ServiceComposer.AspNetCore.Testing.Tests.SelfContainedWebApplicationFactoryTests" name="SelfContainedFactoryWithWebHost_invokes_builder_customization" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f757f430-5e1c-3f56-2619-a17c168b8aec" executionId="7976c956-3d6a-474a-92fe-153a3206f5ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="43215bb2-2b2e-904d-1666-dd5c2d3c8b7e" executionId="a31aad96-b2f6-4ef5-929d-e36ff6279b9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f27cc2c3-c12b-77e3-c1b2-dab7457b6351" executionId="36997127-4e7c-4455-9491-a7ebaec2b031" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aee1601e-cfd3-d948-30f0-a6f15f8e972d" executionId="8fb7735b-3dc7-4815-9779-7303d477ac0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.2)
+[xUnit.net 00:00:00.21]   Discovering: ServiceComposer.AspNetCore.Testing.Tests
+[xUnit.net 00:00:00.33]   Discovered:  ServiceComposer.AspNetCore.Testing.Tests
+[xUnit.net 00:00:00.40]   Starting:    ServiceComposer.AspNetCore.Testing.Tests
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /home/runner/work/ServiceComposer.AspNetCore.Testing/ServiceComposer.AspNetCore.Testing/src/ServiceComposer.AspNetCore.Testing.Tests
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/ - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/ - 200 - - 26.0553ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[xUnit.net 00:00:00.90]   Finished:    ServiceComposer.AspNetCore.Testing.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
