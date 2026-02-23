@@ -7,7 +7,7 @@ using System;
 namespace ServiceComposer.AspNetCore.Testing
 {
     /// <summary>
-    /// Factory for bootstrapping an application in memory for functional end to end tests.
+    /// Factory for bootstrapping an application in memory for functional end-to-end tests.
     /// </summary>
     /// <typeparam name="TEntryPoint">
     /// A type in the entry point assembly of the application. Typically the Startup
@@ -20,6 +20,8 @@ namespace ServiceComposer.AspNetCore.Testing
     {
         readonly Action<IServiceCollection> _configureServices;
         readonly Action<IApplicationBuilder> _configure;
+        readonly Action<WebHostBuilderContext, IServiceCollection> _configureServicesWithWebHostBuilderContext;
+        readonly Action<WebHostBuilderContext, IApplicationBuilder> _configureWithWebHostBuilderContext;
 
         public Action<IWebHostBuilder> BuilderCustomization { get; set; }
 
@@ -28,13 +30,36 @@ namespace ServiceComposer.AspNetCore.Testing
             _configureServices = configureServices;
             _configure = configure;
         }
+        
+        public SelfContainedWebApplicationFactoryWithWebHost(Action<WebHostBuilderContext, IServiceCollection> configureServices, Action<WebHostBuilderContext, IApplicationBuilder> configure)
+        {
+            _configureServicesWithWebHostBuilderContext = configureServices;
+            _configureWithWebHostBuilderContext = configure;
+        }
 
         protected override IWebHostBuilder CreateWebHostBuilder()
         {
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .ConfigureServices(_configureServices)
-                .Configure(_configure);
+            var host = new WebHostBuilder().UseKestrel();
+
+            if (_configureServices != null)
+            {
+                host.ConfigureServices(_configureServices);
+            }
+
+            if (_configureServicesWithWebHostBuilderContext != null)
+            {
+                host.ConfigureServices(_configureServicesWithWebHostBuilderContext);
+            }
+
+            if (_configure != null)
+            {
+                host.Configure(_configure);
+            }
+
+            if (_configureWithWebHostBuilderContext != null)
+            {
+                host.Configure(_configureWithWebHostBuilderContext);
+            }
 
             return host;
         }
@@ -42,7 +67,7 @@ namespace ServiceComposer.AspNetCore.Testing
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
             base.ConfigureWebHost(builder);
-
+           
             BuilderCustomization?.Invoke(builder);
         }
     }
