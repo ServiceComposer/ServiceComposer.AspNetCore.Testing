@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
 
 namespace ServiceComposer.AspNetCore.Testing
@@ -30,44 +31,44 @@ namespace ServiceComposer.AspNetCore.Testing
             _configureServices = configureServices;
             _configure = configure;
         }
-        
+
         public SelfContainedWebApplicationFactoryWithWebHost(Action<WebHostBuilderContext, IServiceCollection> configureServices, Action<WebHostBuilderContext, IApplicationBuilder> configure)
         {
             _configureServicesWithWebHostBuilderContext = configureServices;
             _configureWithWebHostBuilderContext = configure;
         }
 
-        protected override IWebHostBuilder CreateWebHostBuilder()
+        protected override IHostBuilder CreateHostBuilder()
         {
-            var host = new WebHostBuilder().UseKestrel();
+            return Host.CreateDefaultBuilder(Array.Empty<string>())
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    if (_configureServices != null)
+                    {
+                        webBuilder.ConfigureServices(_configureServices);
+                    }
 
-            if (_configureServices != null)
-            {
-                host.ConfigureServices(_configureServices);
-            }
+                    if (_configureServicesWithWebHostBuilderContext != null)
+                    {
+                        webBuilder.ConfigureServices(_configureServicesWithWebHostBuilderContext);
+                    }
 
-            if (_configureServicesWithWebHostBuilderContext != null)
-            {
-                host.ConfigureServices(_configureServicesWithWebHostBuilderContext);
-            }
+                    if (_configure != null)
+                    {
+                        webBuilder.Configure(_configure);
+                    }
 
-            if (_configure != null)
-            {
-                host.Configure(_configure);
-            }
-
-            if (_configureWithWebHostBuilderContext != null)
-            {
-                host.Configure(_configureWithWebHostBuilderContext);
-            }
-
-            return host;
+                    if (_configureWithWebHostBuilderContext != null)
+                    {
+                        webBuilder.Configure(_configureWithWebHostBuilderContext);
+                    }
+                });
         }
 
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
             base.ConfigureWebHost(builder);
-           
+
             BuilderCustomization?.Invoke(builder);
         }
     }

@@ -3,12 +3,16 @@ using VerifyXunit;
 
 namespace ServiceComposer.AspNetCore.Testing.Tests;
 
-public class PublicApiApprovalTests
+public class ApiApprovals
 {
     [Fact]
-    public Task Public_api_is_approved()
+    public Task Approve_API()
     {
-        var publicApi = ApiGenerator.GeneratePublicApi(typeof(WebApplicationFactoryWithWebHost<>).Assembly);
+        var publicApi = typeof(SelfContainedWebApplicationFactoryWithHost<>).Assembly.GeneratePublicApi(new ApiGeneratorOptions
+            {
+            ExcludeAttributes = ["System.Runtime.Versioning.TargetFrameworkAttribute", "System.Reflection.AssemblyMetadataAttribute"]
+        })
+        ;
         return Verifier.Verify(publicApi);
     }
 }
