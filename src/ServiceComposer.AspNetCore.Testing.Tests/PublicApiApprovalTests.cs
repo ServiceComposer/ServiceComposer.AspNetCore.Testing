@@ -8,7 +8,7 @@ public class PublicApiApprovalTests
     [Fact]
     public Task Public_api_is_approved()
     {
-        var publicApi = ApiGenerator.GeneratePublicApi(typeof(WebApplicationFactoryWithWebHost<>).Assembly);
+        var publicApi = typeof(SelfContainedWebApplicationFactoryWithHost<>).Assembly.GeneratePublicApi();
         return Verifier.Verify(publicApi);
     }
 }

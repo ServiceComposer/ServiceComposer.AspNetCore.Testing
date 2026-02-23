@@ -46,22 +46,6 @@ public class SelfContainedWebApplicationFactoryTests
         Assert.True(builderCustomizationCalled);
     }
 
-    [Fact]
-    public async Task WebApplicationFactoryWithWebHost_invokes_builder_customization()
-    {
-        var builderCustomizationCalled = false;
-        await using var factory = new WebApplicationFactoryWithWebHost<Startup>
-        {
-            BuilderCustomization = _ => builderCustomizationCalled = true
-        };
-
-        var client = factory.CreateClient();
-        var response = await client.GetStringAsync("/");
-
-        Assert.Equal("startup", response);
-        Assert.True(builderCustomizationCalled);
-    }
-
     class TestEntryPoint;
 
     class Startup
