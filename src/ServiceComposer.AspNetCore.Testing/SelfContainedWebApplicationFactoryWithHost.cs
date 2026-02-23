@@ -7,24 +7,15 @@ using Microsoft.Extensions.Hosting;
 
 namespace ServiceComposer.AspNetCore.Testing
 {
-    public class SelfContainedWebApplicationFactoryWithHost<TEntryPoint> :
+    public class SelfContainedWebApplicationFactoryWithHost<TEntryPoint>(Action<IServiceCollection> configureServices, Action<IApplicationBuilder> configure, string[] args = null) :
         WebApplicationFactory<TEntryPoint>
         where TEntryPoint : class
     {
-        private readonly Action<IServiceCollection> configureServices;
-        private readonly Action<IApplicationBuilder> configure;
-        private readonly string[] args;
+        private readonly string[] args = args ?? new string[0];
 
         public Action<IHostBuilder> HostBuilderCustomization { get; set; }
 
         public Action<IWebHostBuilder> WebHostBuilderCustomization { get; set; }
-
-        public SelfContainedWebApplicationFactoryWithHost(Action<IServiceCollection> configureServices, Action<IApplicationBuilder> configure, string[] args = null)
-        {
-            this.configureServices = configureServices;
-            this.configure = configure;
-            this.args = args ?? new string[0];
-        }
 
         protected override IHostBuilder CreateHostBuilder()
         {
