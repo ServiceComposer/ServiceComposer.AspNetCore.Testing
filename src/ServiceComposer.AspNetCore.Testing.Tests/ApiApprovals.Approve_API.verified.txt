@@ -14,6 +14,7 @@
         public SelfContainedWebApplicationFactoryWithWebHost(System.Action<Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Builder.IApplicationBuilder> configure) { }
         public SelfContainedWebApplicationFactoryWithWebHost(System.Action<Microsoft.AspNetCore.Hosting.WebHostBuilderContext, Microsoft.Extensions.DependencyInjection.IServiceCollection> configureServices, System.Action<Microsoft.AspNetCore.Hosting.WebHostBuilderContext, Microsoft.AspNetCore.Builder.IApplicationBuilder> configure) { }
         public System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization { get; set; }
+        public string Environment { get; set; }
         protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder) { }
         protected override Microsoft.Extensions.Hosting.IHostBuilder CreateHostBuilder() { }
     }
@@ -22,6 +23,7 @@
     {
         public WebApplicationFactoryWithWebHost() { }
         public System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization { get; set; }
+        public string Environment { get; set; }
         protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder) { }
         protected override Microsoft.Extensions.Hosting.IHostBuilder CreateHostBuilder() { }
     }
