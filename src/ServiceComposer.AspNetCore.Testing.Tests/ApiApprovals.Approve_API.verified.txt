@@ -17,4 +17,12 @@
         protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder) { }
         protected override Microsoft.Extensions.Hosting.IHostBuilder CreateHostBuilder() { }
     }
+    public class WebApplicationFactoryWithWebHost<TStartup> : Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TStartup>
+        where TStartup :  class
+    {
+        public WebApplicationFactoryWithWebHost() { }
+        public System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder> BuilderCustomization { get; set; }
+        protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder) { }
+        protected override Microsoft.Extensions.Hosting.IHostBuilder CreateHostBuilder() { }
+    }
 }
