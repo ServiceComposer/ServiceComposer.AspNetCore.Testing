@@ -9,11 +9,13 @@ namespace ServiceComposer.AspNetCore.Testing
         WebApplicationFactory<TStartup>
         where TStartup : class
     {
+        public string Environment { get; set; } = Environments.Development;
         public Action<IWebHostBuilder> BuilderCustomization { get; set; }
 
         protected override IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder(Array.Empty<string>())
+                .UseEnvironment(Environment)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<TStartup>();

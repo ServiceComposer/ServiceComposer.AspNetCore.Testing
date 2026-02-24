@@ -24,6 +24,7 @@ namespace ServiceComposer.AspNetCore.Testing
         readonly Action<WebHostBuilderContext, IServiceCollection> _configureServicesWithWebHostBuilderContext;
         readonly Action<WebHostBuilderContext, IApplicationBuilder> _configureWithWebHostBuilderContext;
 
+        public string Environment { get; set; } = Environments.Development;
         public Action<IWebHostBuilder> BuilderCustomization { get; set; }
 
         public SelfContainedWebApplicationFactoryWithWebHost(Action<IServiceCollection> configureServices, Action<IApplicationBuilder> configure)
@@ -41,6 +42,7 @@ namespace ServiceComposer.AspNetCore.Testing
         protected override IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder(Array.Empty<string>())
+                .UseEnvironment(Environment)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     if (_configureServices != null)
