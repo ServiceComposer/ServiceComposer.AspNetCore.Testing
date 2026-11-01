@@ -21,7 +21,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <MinVerMinimumMajorMinor>4.0</MinVerMinimumMajorMinor>
+        <MinVerMinimumMajorMinor>5.0</MinVerMinimumMajorMinor>
     </PropertyGroup>
 
     <ItemGroup>
