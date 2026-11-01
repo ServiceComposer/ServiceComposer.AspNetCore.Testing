@@ -8,6 +8,8 @@ ServiceComposer, a ViewModel Composition API Gateway
 
 Documentation is available @ [https://servicecomposer.github.io/ServiceComposer.AspNetCore.Testing/](https://servicecomposer.github.io/ServiceComposer.AspNetCore.Testing/).
 
+For how releases and backports are made, see [RELEASING.md](RELEASING.md).
+
 ### Icon
 
 [API](‪https://thenounproject.com/term/api/883169‬) by [Guilherme Simoes](https://thenounproject.com/uberux/) from [the Noun Project](https://thenounproject.com/).
